@@ -34,20 +34,79 @@
 			<section>
 				<h1>Scaling WebRTC Audio</h1>
 				<p>
-					<small>Created by <a href="http://kukulinski.com">Ross Kukulinski</a> / <a href="http://twitter.com/rosskukulinski">@rosskukulinski</a></small>
+					<small><a href="http://kukulinski.com">Ross Kukulinski</a> / <a href="http://twitter.com/rosskukulinski">@rosskukulinski</a> / 	<a href='http://speakit.io'>SpeakIt.io</a></small>
 				</p>
+				<aside class="notes">SpeakIt.io is providing a browser-based collaboration environment
+					for distributed teams and remote employees.
+				</aside>
 			</section>
 
 
 			<section>
-				<h2>WebRTC is Peer-to-Peer</h2>
+				<h2>WebRTC is Peer-to-Peer<span class='fragment'> (usually)</span></h2>
 				<h2 class='fragment'>Peer-to-Peer is awesome</h2>
 				<h2 class='fragment'>Until it isn't</h2>
+				<aside class="notes">
+					End to end encryption, decentralization, reduced server load/complexity
+
+				</aside>
 			</section>
 
 			<section>
-				<h3>Increasing computational cost at each node</h3>
-				<img width="800" height="600" src="img/photo 5.JPG" alt="Meny">
+				<h3>Meshed Conference</h3>
+				<img width="800" height="600" src="img/mesh.JPG" alt="Meshed Conference">
+				<aside class="notes">
+					Traditional WebRTC p2p conference
+					No central server (except for signaling)
+					No central point of failure
+					Participants can come and go
+
+					Con: More sophisticated endpoints (audio mixing)
+				</aside>
+			</section>
+
+			<section>
+				<h3>Large Scale Meshed Conference</h3>
+				<img width="800" height="600" src="img/meshBig.JPG" alt="Meshed Conference">
+				<aside class="notes">
+
+				</aside>
+			</section>
+
+			<section>
+				<h3>Endpoint as Mixer ('Supernode')</h3>
+				<img width="800" height="600" src="img/supernode.JPG" alt="SuperNode Conference">
+				<aside class="notes">
+					Still p2p
+				Mixing endpoint (A) can't leave
+				As number of participants goes up, A's requirements increases
+			   COULD do more complex system with multiple supernodes, but increases
+				 client side complexity
+				Also, how do you decide which end point is the mixer?
+				</aside>
+			</section>
+
+			<section>
+				<h3>Multiple Supernodes</h3>
+				<img width="800" height="600" src="img/supernodeBig.JPG" alt="SuperNode Conference">
+				<aside class="notes">
+				Scales better, but still how do you decide which end point to be a mixer
+				Also: more complex if B wants to mute E.
+				</aside>
+			</section>
+
+
+			<section>
+				<h3>Mixing Service (aka 'Media Server')</h3>
+				<img width="800" height="600" src="img/mediaserver.JPG" alt="Media Server Conference">
+				<aside class="notes">
+					Offloads mixing computation
+					Reduces bandwidth
+
+					Density important (how many streams can you mix?)
+
+					Con: Central point of failure
+				</aside>
 			</section>
 
 			</div>
