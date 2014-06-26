@@ -21,12 +21,18 @@ Outline
   * Collaboration vs. Broadcast modes
 ![As WebRTC scales](img/photo 5.JPG)
 
-* Solution: Mixer!
+* Solution: Mixer ('Media Control Unit' - ugh...)
   * Mixer nodes support multiple rooms per node
     * Decision: Each room contained in a single node
       * This way if conference goes down, everyone is disconnected
         rather than a partial disconnect with 'hanging' users
   * Density important (What's the density vs max users?)
+  * Where do you put the mixer w/ multiple datacenters?
+   * Consider: datacenter loading, expected conference size,
+     user locations
+   * Naive: random
+   * Naive: nearest to first user
+
 ![Shared Mixer Node](img/photo 2.JPG)
 
 * Brief lesson on audio mixing
@@ -38,6 +44,11 @@ Outline
   * Means no-longer end-to-end encryption
   * If that's an issue, then deploy inside corporate network/firewalls
 
+* Peer2Peer 'Super Nodes'
+ * Skype used to use p2p for 'user online' detection
+ * Utilized 'heavy' clients to offload work from mobile clients
+ * Complexity & quality control more difficult if outside your network
+![Audio mixing server](img/photo 1.JPG)
 
 * Offloading work from Mixer
  ![Geographical mixer nodes](img/photo 3.JPG)
@@ -50,18 +61,25 @@ Outline
    poor audio connections
 
 * Geographically located mixer nodes
+ * Mixer nodes
  * 'Nearby' clients low latency
  * 'Far' clients added network hop
  * Increased complexity (esp if mixer goes down)
 ![Geographical mixer nodes](img/photo 6.JPG)
 
-
-
 * Fault Tolerence
   * Detect mixer downtime
 ![Fault Tolerence](img/photo 4.JPG)
 
-* Mixer recording
+* Collaboration & Broadcast Hybrid
+ * e.g. podcasts, concerts, company-wide presentations
+ * Relay nodes multiply content
+
+* Additional features easily added:
+ * Broadcast
+ * Call recording & archival
+ * Transcription
+ * Event/Sound injection
 
 
 Move the voice folder into the reveal.js plugin folder such that it looks like: `revealjs/plugin/voice/voice.js`, and include the following in the presentation HTML:
