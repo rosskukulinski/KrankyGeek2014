@@ -6,8 +6,8 @@
 
 	<title>Scaling WebRTC Audio</title>
 
-	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-	<meta name="author" content="Hakim El Hattab">
+	<meta name="description" content="Scaling WebRTC Audio for Gaming and other Applications">
+	<meta name="author" content="Ross Kukulinski">
 
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -33,15 +33,14 @@
 		<div class="slides">
 			<section>
 				<h1>Scaling WebRTC Audio</h1>
-				<h2>for fun and profit</h2>
+				<h2>for Gaming and other Applications</h2>
 				<p>
-					<small><a href="http://kukulinski.com">Ross Kukulinski</a> / <a href="http://twitter.com/rosskukulinski">@rosskukulinski</a> / 	<a href='http://speakit.io'>SpeakIt.io</a></small>
+				<a href="http://kukulinski.com">Ross Kukulinski</a> / <a href="http://twitter.com/rosskukulinski">@rosskukulinski</a> / 	<a href='http://speakit.io'>SpeakIt.io</a>
 				</p>
 				<aside class="notes">SpeakIt.io is providing a browser-based collaboration environment
 					for distributed teams and remote employees.
 				</aside>
 			</section>
-
 
 			<section>
 				<h2>WebRTC is Peer-to-Peer<span class='fragment'> (usually)</span></h2>
@@ -55,18 +54,16 @@
 
 			<section>
 				<h2>Audio Vocabulary 101</h2>
-				<ul>
-					<li>Transcoding</li>
-					<li>Mixing</li>
-					<li>Automatic gain control (AGC)</li>
-					<li>Acoustic echo cancelation (AEC)</li>
-					<li>Recording</li>
-				</ul>
+				<p>
+					Transcoding<br>
+					Mixing<br>
+					Acoustic echo cancelation (AEC)<br>
+				</p>
 			</section>
 
 			<section>
-				<h3>Full Meshed Conference</h3>
-				<img width="800" height="600" src="img/mesh.JPG" alt="Meshed Conference">
+				<h3>Fully-Meshed Architecture</h3>
+				<img width="800" height="600" src="img/final/mesh.JPG" alt="Meshed Conference">
 				<aside class="notes">
 					Traditional WebRTC p2p conference
 					No central server (except for signaling)
@@ -78,16 +75,16 @@
 			</section>
 
 			<section>
-				<h3>Larger Full Meshed Conference</h3>
-				<img width="800" height="600" src="img/meshBig.JPG" alt="Meshed Conference">
+				<h3>Larger Fully-Meshed Architecture</h3>
+				<img width="800" height="600" src="img/final/mesh_large.JPG" alt="Meshed Conference">
 				<aside class="notes">
 
 				</aside>
 			</section>
 
 			<section>
-				<h3>Star Mesh Conference: Endpoint as Mixer</h3>
-				<img width="800" height="600" src="img/supernode.JPG" alt="SuperNode Conference">
+				<h3>Star Mesh: Endpoint as Mixer</h3>
+				<img width="800" height="600" src="img/final/star.JPG" alt="SuperNode Conference">
 				<aside class="notes">
 					Still p2p
 				Mixing endpoint (A) can't leave
@@ -99,8 +96,8 @@
 			</section>
 
 			<section>
-				<h3>Multi-Star Conference</h3>
-				<img width="800" height="600" src="img/supernodeBig.JPG" alt="SuperNode Conference">
+				<h3>Multi-Star</h3>
+				<img width="800" height="600" src="img/final/star_large.JPG" alt="SuperNode Conference">
 				<aside class="notes">
 				Scales better, but still how do you decide which end point to be a mixer
 				Also: more complex if B wants to mute E.
@@ -110,7 +107,7 @@
 
 			<section>
 				<h3>Multipoint Control Unit (aka 'Media Server')</h3>
-				<img width="800" height="600" src="img/mediaserver.JPG" alt="Media Server Conference">
+				<img width="800" height="600" src="img/final/mcu.JPG" alt="Media Server Conference">
 				<aside class="notes">
 					Offloads mixing computation
 					Reduces bandwidth
@@ -123,7 +120,7 @@
 
 			<section>
 				<h3>Larger MCU</h3>
-				<img width="800" height="600" src="img/mediaserverBig.JPG" alt="Media Server Conference">
+				<img width="800" height="600" src="img/final/mcu_large.JPG" alt="Media Server Conference">
 				<aside class="notes">
 					Offloads mixing computation
 					Reduces bandwidth
@@ -145,15 +142,44 @@
 			</section>
 
 			<section>
-				<h2>SpeakIt Media Cluster</h2>
-				<img width="800" height="600" src="img/mediaCluster.JPG" alt="Media Server Conference">
+				<h2>SpeakIt Architecture</h2>
+				<aside class="notes">
+
+				</aside>
+			</section>
+
+			<section>
+				<h3>SpeakIt WebSocket Mixing Cluster</h3>
+				<img width="800" height="600" src="img/final/speakit1.JPG" alt="Media Server Conference">
+			</section>
+
+			<section>
+				<h3>SpeakIt PeerConnection Mixing Cluster</h3>
+				<img width="800" height="600" src="img/final/speakit2.JPG" alt="Media Server Conference">
+			</section>
+
+			<section>
+				<h3>External Services</h3>
+				<img width="800" height="600" src="img/final/external_services.JPG" alt="Media Server Conference">
+			</section>
+
+			<section>
+				<h3>Multicast MCUs</h3>
+				<img width="800" height="600" src="img/final/multicast.JPG" alt="Media Server Conference">
 			</section>
 
 			<section>
 				<h3>Geolocation</h3>
-				<h3>Redundancy / Fault Tolerence</h3>
+				<img width="800" height="600" src="img/final/geographic.JPG" alt="Media Server Conference">
 			</section>
 
+
+			<section>
+					<h1>Thanks!</h1>
+					<h3>Ross Kukulinski</h3>
+					<h3>ross at SpeakIt.io</h3>
+					<h3>@rosskukulinski</h3>
+			</section>
 
 
 		</div>
@@ -175,17 +201,9 @@
 			theme: 'beige', // available themes are in /css/theme
 			transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
-			// Parallax scrolling
-			// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-			// parallaxBackgroundSize: '2100px 900px',
-
 			// Optional libraries used to extend on reveal.js
 			dependencies: [
 			{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-			{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-			{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-			{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-			{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 			{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 			]
 		});
